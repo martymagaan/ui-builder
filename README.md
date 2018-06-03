@@ -24,17 +24,9 @@ Quick example:
 
 ## App Object Methods
 
-### get(elementId) ###
-
-Returns element of given id and adds custom methods (described below) to element.
-
-Example:
-
-    var elem = app.get('foo');
-
 ### create(tag, id[optional], className[optional]) ###
 
-Returns new element of given tag, id, and classes with custom methods (described below).
+Returns new element with given tag, id, and classes and adds custom element methods.
 
 Example:
 
@@ -42,6 +34,14 @@ Example:
     var elem2 = app.create('img', 'myImg');
     var elem3 = app.create('span', 'mySpan', 'class1 class2');
     var elem4 = app.create('div', null, 'class3');
+
+### get(elementId) ###
+
+Returns element of given id and adds custom element methods.
+
+Example:
+
+    var elem = app.get('foo');
 
 ## Custom Element Methods ##
 
