@@ -8,12 +8,12 @@ body {
 #foo {
   width: 100%;
   padding: 80px;
-  background: #101013;
+  background: #101112;
   color: #fff;
   box-sizing: border-box;
 }
 
-#bar {
+.bar {
   margin: 0;
   padding: 80px;
 }

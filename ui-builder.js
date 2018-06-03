@@ -2,19 +2,6 @@ var app = {};
 
 (function() {
 
-  app.load = function() {
-    for (let i = 0; i < arguments.length; i++)
-      loadScript(arguments[i]);
-  }
-
-  app.run = function() {
-    var scripts = arguments;
-    window.onload = function() {
-      for (let i = 0; i < scripts.length; i++)
-        loadScript(scripts[i]);
-    };
-  }
-
   app.get = function(id) {
     var elem = document.getElementById(id);
     addCustomMethods(elem);
@@ -28,12 +15,6 @@ var app = {};
     addCustomMethods(elem);
     return elem;
   };
-
-  function loadScript(script) {
-    var scriptElem = app.create('script');
-    scriptElem.src = script;
-    scriptElem.addTo(document.body);
-  }
 
   function addCustomMethods(elem) {
     elem.add = function(child) { add(elem, child) };

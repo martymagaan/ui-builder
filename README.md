@@ -19,40 +19,16 @@ Quick example:
 
     elem1.add(elem2);
 
-    elem1.addTo(document.body);
+    elem1.addTo(app.get('root-div'));
     
 
 ## App Object Methods
-
-### load(args...) ###
-
-Include separate javascript files.
-
-Example:
-
-    app.load(
-      'script1.js',
-      'script2.js',
-      'script3.js'
-    );
-
-### run(args...) ###
-
-Run main scripts after page and pre-loaded scripts are finished loading.
-
-Example:
-
-    app.run('main.js');
-
-### get(elementId) ###
-
-Returns element of given id and adds custom methods (described below) to element.
 
 Example:
 
     var elem = app.get('foo');
 
-### create(tag, id*[optional]*, className*[optional]*) ###
+### create(tag, id[optional], className[optional]) ###
 
 Returns new element of given tag, id, and classes with custom methods (described below).
 
