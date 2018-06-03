@@ -1,0 +1,19 @@
+html,
+body {
+  margin: 0;
+  font: 30px Georgia, serif;
+  text-align: center;
+}
+
+#foo {
+  width: 100%;
+  padding: 80px;
+  background: #101013;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+#bar {
+  margin: 0;
+  padding: 80px;
+}
