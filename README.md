@@ -24,6 +24,10 @@ Quick example:
 
 ## App Object Methods
 
+### get(elementId) ###
+
+Returns element of given id and adds custom methods (described below) to element.
+
 Example:
 
     var elem = app.get('foo');
