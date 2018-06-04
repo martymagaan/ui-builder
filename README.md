@@ -12,17 +12,17 @@ Download and link js file in your HTML
 
 Quick example:
 
-    var elem1 = app.create('div', 'elem1-id', 'some-class');
+    var elem1 = ui.create('div', 'elem1-id', 'some-class');
 
-    var elem2 = app.create('p', 'elem2-id');
+    var elem2 = ui.create('p', 'elem2-id');
     elem2.addText('Hello!');
 
     elem1.add(elem2);
 
-    elem1.addTo(app.get('root-div'));
+    elem1.addTo(ui.get('root-div'));
     
 
-## App Object Methods
+## Ui Object Methods
 
 ### create(tag, id[optional], className[optional]) ###
 
@@ -30,10 +30,10 @@ Returns new element with given tag, id, and classes and adds custom element meth
 
 Example:
 
-    var elem1 = app.create('div');
-    var elem2 = app.create('img', 'myImg');
-    var elem3 = app.create('span', 'mySpan', 'class1 class2');
-    var elem4 = app.create('div', null, 'class3');
+    var elem1 = ui.create('div');
+    var elem2 = ui.create('img', 'myImg');
+    var elem3 = ui.create('span', 'mySpan', 'class1 class2');
+    var elem4 = ui.create('div', null, 'class3');
 
 ### get(elementId) ###
 
@@ -41,7 +41,7 @@ Returns element of given id and adds custom element methods.
 
 Example:
 
-    var elem = app.get('foo');
+    var elem = ui.get('foo');
 
 ## Custom Element Methods ##
 

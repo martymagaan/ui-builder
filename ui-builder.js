@@ -1,14 +1,14 @@
-var app = {};
+var ui = {};
 
 (function() {
 
-  app.get = function(id) {
+  ui.get = function(id) {
     var elem = document.getElementById(id);
     addCustomMethods(elem);
     return elem;
   }
 
-  app.create = function(tag, id, className) {
+  ui.create = function(tag, id, className) {
     var elem = document.createElement(tag);
     if (id) elem.id = id;
     if (className) elem.className = className;
