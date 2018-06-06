@@ -1,15 +1,15 @@
-var ui = {};
+let ui = {};
 
 (function() {
 
   ui.get = function(id) {
-    var elem = document.getElementById(id);
+    let elem = document.getElementById(id);
     addCustomMethods(elem);
     return elem;
   }
 
   ui.create = function(tag, id, className) {
-    var elem = document.createElement(tag);
+    let elem = document.createElement(tag);
     if (id) elem.id = id;
     if (className) elem.className = className;
     addCustomMethods(elem);
@@ -28,7 +28,7 @@ var ui = {};
   }
 
   function addTextTo(element, text) {
-    var textNode = document.createTextNode(text);
+    let textNode = document.createTextNode(text);
     element.appendChild(textNode);
   }
 
