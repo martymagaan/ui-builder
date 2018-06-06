@@ -12,9 +12,9 @@ Download and link js file in your HTML
 
 Quick example:
 
-    var elem1 = ui.create('div', 'elem1-id', 'some-class');
+    let elem1 = ui.create('div', 'elem1-id', 'some-class');
 
-    var elem2 = ui.create('p', 'elem2-id');
+    let elem2 = ui.create('p', 'elem2-id');
     elem2.addText('Hello!');
 
     elem1.add(elem2);
@@ -30,10 +30,10 @@ Returns new element with given tag, id, and classes and adds custom element meth
 
 Example:
 
-    var elem1 = ui.create('div');
-    var elem2 = ui.create('img', 'myImg');
-    var elem3 = ui.create('span', 'mySpan', 'class1 class2');
-    var elem4 = ui.create('div', null, 'class3');
+    let elem1 = ui.create('div');
+    let elem2 = ui.create('img', 'myImg');
+    let elem3 = ui.create('span', 'mySpan', 'class1 class2');
+    let elem4 = ui.create('div', null, 'class3');
 
 ### get(elementId) ###
 
@@ -41,7 +41,7 @@ Returns element of given id and adds custom element methods.
 
 Example:
 
-    var elem = ui.get('foo');
+    let elem = ui.get('foo');
 
 ## Custom Element Methods ##
 
@@ -75,4 +75,4 @@ Returns computed style value.
 
 Example:
 
-    var marginTop = elem.getComputed('margin-top');
+    let marginTop = elem.getComputed('margin-top');
