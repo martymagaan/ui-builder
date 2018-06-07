@@ -21,7 +21,7 @@ Example:
     /* Creates:
 
     <div id="app-root">
-      <div id="divId" class="selected">
+      <div id="myDiv" class="selected">
         <p>Hello World!</p>
       </div>
     </div>
