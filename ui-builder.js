@@ -2,19 +2,29 @@ let ui = {};
 
 (function() {
 
-  ui.get = function(id) {
-    let elem = document.getElementById(id);
-    addCustomMethods(elem);
-    return elem;
+  ui.init = init;
+  ui.create = create;
+  ui.get = get;
+
+  function init() {
+    ui.root = create('div', 'app-root');
+    document.body.insertBefore(ui.root, document.body.firstChild);
   }
 
-  ui.create = function(tag, id, className) {
+  function create(tag, id, className, parent) {
     let elem = document.createElement(tag);
     if (id) elem.id = id;
     if (className) elem.className = className;
     addCustomMethods(elem);
+    if (parent) elem.addTo(parent);
     return elem;
-  };
+  }
+
+  function get(id) {
+    let elem = document.getElementById(id);
+    addCustomMethods(elem);
+    return elem;
+  }
 
   function addCustomMethods(elem) {
     elem.add = function(child) { add(elem, child) };

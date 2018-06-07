@@ -10,30 +10,52 @@ Download and link js file in your HTML
 
     <script src="path-to/ui-builder.js"></script>
 
-Quick example:
+Example:
 
-    let elem1 = ui.create('div', 'elem1-id', 'some-class');
+    ui.init();
 
-    let elem2 = ui.create('p', 'elem2-id');
-    elem2.addText('Hello!');
+    let elem1 = ui.create('div', 'myDiv', 'selected', ui.root);
+    let elem2 = ui.create('p', null, null, elem1);
+    elem2.addText('Hello World!');
 
-    elem1.add(elem2);
+    /* Creates:
 
-    elem1.addTo(ui.get('root-div'));
+    <div id="app-root">
+      <div id="divId" class="selected">
+        <p>Hello World!</p>
+      </div>
+    </div>
+
+    */
     
 
 ## Ui Object Methods
 
-### create(tag, id[optional], className[optional]) ###
+### init() ###
 
-Returns new element with given tag, id, and classes and adds custom element methods.
+Creates a root element in the document body that can be referenced using *ui.root*. The highest level 
+elements in your app should be appended to this element.
+
+### create(tag, id[optional], className[optional], parent[optional]) ###
+
+Returns new element with given tag, id, and classes, adds custom methods to element, and appends element 
+to parent if given.
 
 Example:
 
-    let elem1 = ui.create('div');
-    let elem2 = ui.create('img', 'myImg');
-    let elem3 = ui.create('span', 'mySpan', 'class1 class2');
-    let elem4 = ui.create('div', null, 'class3');
+    let elem = ui.create('div');
+
+    // OR
+
+    let elem = ui.create('img', 'myImg');
+
+    // OR
+
+    let elem = ui.create('span', 'mySpan', 'class1 class2', ui.root);
+
+    // OR
+
+    let elem = ui.create('div', null, 'class1');
 
 ### get(elementId) ###
 
