@@ -14,8 +14,8 @@ Example:
 
     ui.init();
 
-    let elem1 = ui.create('div', 'myDiv', 'selected', ui.root);
-    let elem2 = ui.create('p', null, null, elem1);
+    let elem1 = ui.root.create('div', 'myDiv', 'selected');
+    let elem2 = elem1.create('p');
     elem2.addText('Hello World!');
 
     /* Creates:
@@ -90,6 +90,15 @@ Appends text node with given text to caller.
 Example:
 
     elem.addText('Hello!');
+
+### create(tag, id[optional], className[optional]) ###
+
+Creates new element with given parameters and custom methods, appends it to caller, and returns it.
+
+Example:
+
+    let childElem = parentElem.create('img');
+    childElem.src = 'img.jpg';
 
 ### getComputed(style) ###
 

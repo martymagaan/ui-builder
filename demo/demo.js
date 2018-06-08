@@ -1,9 +1,9 @@
 ui.init();
 
-let foo = ui.create('div', 'foo', null, ui.root);
+let foo = ui.root.create('div', 'foo');
 foo.addText('Hello World!');
 
 let bgColor = foo.getComputed('background-color');
 
-let bar = ui.create('p', null, 'bar', ui.root);
+let bar = ui.root.create('p', null, 'bar');
 bar.addText('The background color of the above div is ' + bgColor + '.');
