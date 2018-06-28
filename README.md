@@ -15,7 +15,7 @@ Example:
     ui.init();
 
     let elem1 = ui.root.create('div', 'myDiv', 'selected');
-    let elem2 = elem1.create('p');
+    let elem2 = elem1.ui.create('p');
     elem2.addText('Hello World!');
 
     /* Creates:
@@ -67,43 +67,35 @@ Example:
 
 ## Custom Element Methods ##
 
-### add(child) ###
+### ui.add(child) ###
 
 Appends given element to caller.
 
 Example:
 
-    elem1.add(elem2);
+    elem1.ui.add(elem2);
 
-### addTo(parent) ###
+### ui.addTo(parent) ###
 
 Appends caller to given element.
 
 Example:
 
-    elem1.addTo(elem2);
+    elem1.ui.addTo(elem2);
 
-### addText(text) ###
+### ui.addText(text) ###
 
 Appends text node with given text to caller.
 
 Example:
 
-    elem.addText('Hello!');
+    elem.ui.addText('Hello!');
 
-### create(tag, id[optional], className[optional]) ###
+### ui.create(tag, id[optional], className[optional]) ###
 
 Creates new element with given parameters and custom methods, appends it to caller, and returns it.
 
 Example:
 
-    let childElem = parentElem.create('img');
+    let childElem = parentElem.ui.create('img');
     childElem.src = 'img.jpg';
-
-### getComputed(style) ###
-
-Returns computed style value.
-
-Example:
-
-    let marginTop = elem.getComputed('margin-top');

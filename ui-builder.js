@@ -3,12 +3,14 @@ let ui = {};
 (function() {
 
   ui.init = init;
-  ui.create = create;
-  ui.get = get;
 
   function init() {
-    ui.root = create('div', 'app-root');
-    document.body.insertBefore(ui.root, document.body.firstChild);
+    let root = create('div', 'app-root');
+    document.body.insertBefore(root, document.body.firstChild);
+    ui.add = function (child) { add(root, child) };
+    ui.addText = function(text) { addTextTo(root, text) };
+    ui.create = function(tag, id, className) { return create(tag, id, className, root) };
+    ui.get = get;
   }
 
   function add(parent, child) {
@@ -16,11 +18,11 @@ let ui = {};
   }
 
   function addCustomMethods(elem) {
-    elem.add = function (child) { add(elem, child) };
-    elem.addTo = function(parent) { add(parent, elem) };
-    elem.addText = function(text) { addTextTo(elem, text) };
-    elem.create = function(tag, id, className) { return create(tag, id, className, elem) };
-    elem.getComputed = function(style) { return getComputed(elem, style) };
+    elem.ui = {};
+    elem.ui.add = function (child) { add(elem, child) };
+    elem.ui.addTo = function(parent) { add(parent, elem) };
+    elem.ui.addText = function(text) { addTextTo(elem, text) };
+    elem.ui.create = function(tag, id, className) { return create(tag, id, className, elem) };
   }
 
   function addTextTo(element, text) {
@@ -33,18 +35,12 @@ let ui = {};
     if (id) elem.id = id;
     if (className) elem.className = className;
     addCustomMethods(elem);
-    if (parent) elem.addTo(parent);
+    if (parent) elem.ui.addTo(parent);
     return elem;
   }
 
   function get(id) {
-    let elem = document.getElementById(id);
-    addCustomMethods(elem);
-    return elem;
-  }
-
-  function getComputed(elem, style) {
-    return window.getComputedStyle(elem, null).getPropertyValue(style);
+    return document.getElementById(id);
   }
 
 })();
