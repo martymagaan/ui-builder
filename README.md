@@ -18,15 +18,13 @@ Example:
     let elem2 = elem1.ui.create('p');
     elem2.addText('Hello World!');
 
-    /* Creates:
+Creates:
 
     <div id="app-root">
       <div id="myDiv" class="selected">
         <p>Hello World!</p>
       </div>
     </div>
-
-    */
     
 
 ## Ui Object Methods
