@@ -33,69 +33,37 @@ Example:
 
 ### init() ###
 
-Creates a root element in the document body that can be referenced using *ui.root*. The highest level 
-elements in your app should be appended to this element.
-
-### create(tag, id[optional], className[optional], parent[optional]) ###
-
-Returns new element with given tag, id, and classes, adds custom methods to element, and appends element 
-to parent if given.
+Creates a root element in the document body that has custom methods for adding new elements to it.
+The root element can be referenced using *ui.root*.
 
 Example:
 
-    let elem = ui.create('div');
+ui.init();
 
-    // OR
+### get(id) ###
 
-    let elem = ui.create('img', 'myImg');
-
-    // OR
-
-    let elem = ui.create('span', 'mySpan', 'class1 class2', ui.root);
-
-    // OR
-
-    let elem = ui.create('div', null, 'class1');
-
-### get(elementId) ###
-
-Returns element of given id and adds custom element methods.
+Gets element by id.
 
 Example:
 
-    let elem = ui.get('foo');
+ui.get('container');
 
-## Custom Element Methods ##
 
-### ui.add(child) ###
+## Element Methods ##
 
-Appends given element to caller.
+### create(tag, id[optional], className[optional]) ###
 
-Example:
-
-    elem1.ui.add(elem2);
-
-### ui.addTo(parent) ###
-
-Appends caller to given element.
+Creates new element with given parameters and custom ui methods, appends it to caller, and returns it.
 
 Example:
 
-    elem1.ui.addTo(elem2);
+    let childElem = parentElem.create('img');
+    childElem.src = 'img.jpg';
 
-### ui.addText(text) ###
+### addText(text) ###
 
 Appends text node with given text to caller.
 
 Example:
 
-    elem.ui.addText('Hello!');
-
-### ui.create(tag, id[optional], className[optional]) ###
-
-Creates new element with given parameters and custom methods, appends it to caller, and returns it.
-
-Example:
-
-    let childElem = parentElem.ui.create('img');
-    childElem.src = 'img.jpg';
+    elem.addText('Hello!');
