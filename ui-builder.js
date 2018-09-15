@@ -28,6 +28,7 @@ let ui = {};
     if (alt) elem.alt = alt;
     if (id) elem.id = id;
     if (className) elem.className = className;
+    if (parent) add(parent, elem);
     return elem;
   }
 
