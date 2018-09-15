@@ -14,8 +14,8 @@ Example:
 
     ui.init();
 
-    let elem1 = ui.root.create('div', 'myDiv', 'selected');
-    let elem2 = elem1.ui.create('p');
+    const elem1 = ui.root.create('div', 'myDiv', 'selected');
+    const elem2 = elem1.ui.create('p');
     elem2.addText('Hello World!');
 
 Creates:
@@ -55,8 +55,19 @@ Creates new element with given parameters and custom ui methods, appends it to c
 
 Example:
 
-    let childElem = parentElem.create('img');
-    childElem.src = 'img.jpg';
+    const list = ui.root.create('ul');
+    const item1 = list.create('li');
+    const item2 = list.create('li');
+
+
+### createImg(src, alt[optional], id[optional], className[optional]) ###
+
+Creates new image with given parameters, appends it to caller, and returns it.
+
+Example:
+
+    const img = parentElem.createImg('logo.jpg', 'My Logo', 'logo');
+
 
 ### addText(text) ###
 
@@ -65,3 +76,14 @@ Appends text node with given text to caller.
 Example:
 
     elem.addText('Hello!');
+
+
+### addBreak() ###
+
+Adds <br> to caller.
+
+Example:
+
+    elem.addText('Hi!');
+    elem.addBreak();
+    elem.addText('Bye!');

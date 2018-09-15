@@ -23,9 +23,11 @@ let ui = {};
   }
 
   function createImg(parent, src, alt, id, className) {
-    const elem = create(parent, 'img', id, className);
+    const elem = document.createElement('img');
     elem.src = src;
     if (alt) elem.alt = alt;
+    if (id) elem.id = id;
+    if (className) elem.className = className;
     return elem;
   }
 
