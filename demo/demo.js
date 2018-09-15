@@ -1,7 +1,13 @@
 ui.init();
 
-let foo = ui.root.create('div', 'foo');
-foo.addText('Hello World!');
+const header = ui.root.create('header', 'myHeader');
+header.addText('Hello World!');
 
-let bar = ui.root.create('p', null, 'bar');
-bar.addText('This is a demo.');
+const content = ui.root.create('div', null, 'content');
+content.addText('This is a demo.');
+content.addBreak();
+content.createImg(
+   'http://portfolio.martymagaan.com/img/tools.svg',
+   'Logo',
+   'myLogo'
+);
