@@ -80,7 +80,7 @@ Example:
 
 ### addBreak() ###
 
-Adds <br> to caller.
+Adds line break to caller.
 
 Example:
 
