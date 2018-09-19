@@ -1,6 +1,7 @@
 # UI Builder
 
-A simple pure javascript library for quickly building user interfaces.
+A simple pure javascript library for quickly building user interfaces by using a pattern in which
+each element can create (and automatically append) its own child elements.
 
 **See [demo.html](http://projects.martymagaan.com/ui-builder/demo/demo.html) file to see it in action.**
 
@@ -13,8 +14,9 @@ Download and link js file in your HTML
 Example:
 
     ui.init();
-    const elem1 = ui.root.create('div', 'myDiv');
-    elem1.ui.create('p').addText('Hello World!');
+    const myDiv = ui.create('div', 'myDiv');
+    const p = myDiv.create('p');
+    p.addText('Hello World!');
 
 Creates:
 
@@ -23,18 +25,38 @@ Creates:
         <p>Hello World!</p>
       </div>
     </div>
+
+How to achieve the same using javascript normally:
+
+    const root = document.createElement('div');
+    root.id = 'app-root';
+    document.body.insertBefore(root, document.body.firstChild);
+
+    const myDiv = document.createElement('div');
+    myDiv.id = 'myDiv';
+    root.appendChild(myDiv);
+
+    const paragraph = document.createElement('p');
+    const text = document.createTextNode('Hello World!');
+    paragraph.appendChild(text);
     
 
 ## Ui Object Methods
 
 ### init() ###
 
-Creates a root element in the document body that has custom methods for adding new elements to it.
-The root element can be referenced using *ui.root*.
+Creates a root element with the id *app-root* at the beginning of the document body.
+This root element can then be referenced using the *ui* object.
 
 Example:
 
     ui.init();
+    console.log(ui);
+
+Output:
+
+    <div id="app-root"></div>
+
 
 ### get(id) ###
 
@@ -42,14 +64,14 @@ Gets element by id.
 
 Example:
 
-    ui.get('container');
+    const elem = ui.get('container');
 
 
 ## Element Methods ##
 
 ### create(tag, id[optional], className[optional]) ###
 
-Creates new element with given parameters and custom ui methods, appends it to caller, and returns it.
+Creates a new element with given parameters, appends it to caller, and returns it.
 
 Example:
 
@@ -60,7 +82,7 @@ Example:
 
 ### createImg(src, alt[optional], id[optional], className[optional]) ###
 
-Creates new image with given parameters, appends it to caller, and returns it.
+Creates a new image with given parameters, appends it to caller, and returns it.
 
 Example:
 

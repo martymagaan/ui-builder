@@ -5,8 +5,10 @@ let ui = {};
   ui.init = init;
 
   function init() {
-    ui.root = create(null, 'div', 'app-root');
-    document.body.insertBefore(ui.root, document.body.firstChild);
+    ui = create(null, 'div', 'app-root');
+    document.body.insertBefore(ui, document.body.firstChild);
+    ui.init = init;
+    ui.get = get;
   }
 
   function create(parent, tag, id, className) {
@@ -57,7 +59,7 @@ let ui = {};
     };
   }
 
-  ui.get = function (id) {
+  function get (id) {
     return document.getElementById(id);
   }
 
