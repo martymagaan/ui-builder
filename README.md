@@ -75,7 +75,7 @@ Creates a new element with given parameters, appends it to caller, and returns i
 
 Example:
 
-    const list = ui.root.create('ul');
+    const list = ui.create('ul');
     const item1 = list.create('li');
     const item2 = list.create('li');
 
