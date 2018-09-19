@@ -13,15 +13,13 @@ Download and link js file in your HTML
 Example:
 
     ui.init();
-
-    const elem1 = ui.root.create('div', 'myDiv', 'selected');
-    const elem2 = elem1.ui.create('p');
-    elem2.addText('Hello World!');
+    const elem1 = ui.root.create('div', 'myDiv');
+    elem1.ui.create('p').addText('Hello World!');
 
 Creates:
 
     <div id="app-root">
-      <div id="myDiv" class="selected">
+      <div id="myDiv">
         <p>Hello World!</p>
       </div>
     </div>
@@ -36,7 +34,7 @@ The root element can be referenced using *ui.root*.
 
 Example:
 
-ui.init();
+    ui.init();
 
 ### get(id) ###
 
@@ -44,7 +42,7 @@ Gets element by id.
 
 Example:
 
-ui.get('container');
+    ui.get('container');
 
 
 ## Element Methods ##
