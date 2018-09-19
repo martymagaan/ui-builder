@@ -1,6 +1,6 @@
 # UI Builder
 
-A simple pure javascript library for quickly building user interfaces by using a pattern in which
+A simple pure javascript library for quickly building user interfaces programmatically by using a pattern in which
 each element can create (and automatically append) its own child elements.
 
 **See [demo.html](http://projects.martymagaan.com/ui-builder/demo/demo.html) file to see it in action.**
