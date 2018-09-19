@@ -76,17 +76,15 @@ Creates a new element with given parameters, appends it to caller, and returns i
 Example:
 
     const list = ui.create('ul');
-    const item1 = list.create('li');
-    const item2 = list.create('li');
+    const item1 = list.create('li', 'nav-home');
+    const item2 = list.create('li', null, 'nav-icon');
 
+Creates:
 
-### createImg(src, alt[optional], id[optional], className[optional]) ###
-
-Creates a new image with given parameters, appends it to caller, and returns it.
-
-Example:
-
-    const img = parentElem.createImg('logo.jpg', 'My Logo', 'logo');
+    <ul>
+      <li id="nav-home"></li>
+      <li class="nav-icon"></li>
+    </ul>
 
 
 ### addText(text) ###

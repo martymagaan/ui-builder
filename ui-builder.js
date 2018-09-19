@@ -24,16 +24,6 @@ let ui = {};
     parent.appendChild(child);
   }
 
-  function createImg(parent, src, alt, id, className) {
-    const elem = document.createElement('img');
-    elem.src = src;
-    if (alt) elem.alt = alt;
-    if (id) elem.id = id;
-    if (className) elem.className = className;
-    if (parent) add(parent, elem);
-    return elem;
-  }
-
   function addText(text, element) {
     const textNode = document.createTextNode(text);
     element.appendChild(textNode);
@@ -47,9 +37,6 @@ let ui = {};
   function addCustomMethods(elem) {
     elem.create = function(tag, id, className) {
       return create(elem, tag, id, className);
-    };
-    elem.createImg = function(src, alt, id, className) {
-      return createImg(elem, src, alt, id, className);
     };
     elem.addText = function(text) {
       addText(text, elem);
