@@ -1,9 +1,9 @@
-ui.createRoot();
+const root = ui.createRoot('root');
 
-const header = ui.root.create('header', 'myHeader');
+const header = root.create('header', 'myHeader');
 header.addText('Hello World!');
 
-const content = ui.root.create('div', null, 'content');
+const content = root.create('div', null, 'content');
 content.addText('This is a demo.');
 content.addBreak();
 

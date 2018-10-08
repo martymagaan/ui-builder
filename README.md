@@ -13,14 +13,14 @@ Download and link js file in your HTML
 
 Example:
 
-    ui.createRoot();
-    const myDiv = ui.root.create('div', 'myDiv');
+    const app = ui.createRoot('app');
+    const myDiv = app.create('div', 'myDiv');
     const p = myDiv.create('p');
     p.addText('Hello World!');
 
 Creates:
 
-    <div id="app-root">
+    <div id="app">
       <div id="myDiv">
         <p>Hello World!</p>
       </div>
@@ -29,7 +29,7 @@ Creates:
 How to achieve the same using javascript normally:
 
     const root = document.createElement('div');
-    root.id = 'app-root';
+    root.id = 'app';
     document.body.insertBefore(root, document.body.firstChild);
 
     const myDiv = document.createElement('div');
@@ -43,19 +43,18 @@ How to achieve the same using javascript normally:
 
 ## Ui Object Methods
 
-### createRoot() ###
+### createRoot(id) ###
 
-Creates a root element with the id *app-root* at the beginning of the document body.
-This root element can then be referenced using *ui.root* object.
+Creates a root element with given id at the beginning of the document body and returns it.
 
 Example:
 
-    ui.createRoot();
-    console.log(ui.root);
+    const app = ui.createRoot('app');
+    console.log(app);
 
 Output:
 
-    <div id="app-root"></div>
+    <div id="app"></div>
 
 
 ### get(id) ###
@@ -75,7 +74,7 @@ Creates a new element with given parameters, appends it to caller, and returns i
 
 Example:
 
-    const list = ui.create('ul');
+    const list = elem.create('ul');
     const item1 = list.create('li', 'nav-home');
     const item2 = list.create('li', null, 'nav-icon');
 

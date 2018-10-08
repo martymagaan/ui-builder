@@ -2,9 +2,10 @@ let ui = {};
 
 (function() {
 
-  ui.createRoot = function () {
-    ui.root = create(null, 'div', 'app-root');
-    document.body.insertBefore(ui.root, document.body.firstChild);
+  ui.createRoot = function(id = 'app-root') {
+    const root = create(null, 'div', id);
+    document.body.insertBefore(root, document.body.firstChild);
+    return root;
   }
 
   function create(parent, tag, id, className) {
