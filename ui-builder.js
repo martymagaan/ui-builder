@@ -2,26 +2,18 @@ let ui = {};
 
 (function() {
 
-  ui.init = init;
-
-  function init() {
-    ui = create(null, 'div', 'app-root');
-    document.body.insertBefore(ui, document.body.firstChild);
-    ui.init = init;
-    ui.get = get;
+  ui.createRoot = function () {
+    ui.root = create(null, 'div', 'app-root');
+    document.body.insertBefore(ui.root, document.body.firstChild);
   }
 
   function create(parent, tag, id, className) {
     const elem = document.createElement(tag);
     if (id) elem.id = id;
     if (className) elem.className = className;
-    if (parent) add(parent, elem);
+    if (parent) parent.appendChild(elem);
     addCustomMethods(elem);
     return elem;
-  }
-
-  function add(parent, child) {
-    parent.appendChild(child);
   }
 
   function addText(text, element) {
@@ -46,8 +38,10 @@ let ui = {};
     };
   }
 
-  function get (id) {
-    return document.getElementById(id);
+  ui.get = function(id) {
+    const elem = document.getElementById(id);
+    addCustomMethods(elem);
+    return elem;
   }
 
 })();

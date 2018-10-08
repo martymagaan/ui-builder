@@ -13,8 +13,8 @@ Download and link js file in your HTML
 
 Example:
 
-    ui.init();
-    const myDiv = ui.create('div', 'myDiv');
+    ui.createRoot();
+    const myDiv = ui.root.create('div', 'myDiv');
     const p = myDiv.create('p');
     p.addText('Hello World!');
 
@@ -43,15 +43,15 @@ How to achieve the same using javascript normally:
 
 ## Ui Object Methods
 
-### init() ###
+### createRoot() ###
 
 Creates a root element with the id *app-root* at the beginning of the document body.
-This root element can then be referenced using the *ui* object.
+This root element can then be referenced using *ui.root* object.
 
 Example:
 
-    ui.init();
-    console.log(ui);
+    ui.createRoot();
+    console.log(ui.root);
 
 Output:
 
@@ -60,7 +60,7 @@ Output:
 
 ### get(id) ###
 
-Gets element by id.
+Gets element by id and adds custom ui-builder methods to element.
 
 Example:
 
