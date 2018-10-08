@@ -13,7 +13,7 @@ Download and link js file in your HTML
 
 Example:
 
-    const app = ui.createRoot('app');
+    const app = ui.createRoot();
     const myDiv = app.create('div', 'myDiv');
     const p = myDiv.create('p');
     p.addText('Hello World!');
