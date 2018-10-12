@@ -8,6 +8,10 @@ let ui = {};
     return root;
   }
 
+  ui.create = function(tag, id, className) {
+    return create(null, tag, id, className);
+  };
+
   function create(parent, tag, id, className) {
     const elem = document.createElement(tag);
     if (id) elem.id = id;

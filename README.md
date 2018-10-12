@@ -57,6 +57,17 @@ Output:
     <div id="app"></div>
 
 
+### create(tag, id[optional], className[optional]) ###
+
+Returns new element with given parameters. New element will have custom ui-builder methods.
+
+Example:
+
+    const elem = ui.create('h1');
+    elem.addText('Hello');
+    document.body.appendChild(elem);
+
+
 ### get(id) ###
 
 Gets element by id and adds custom ui-builder methods to element.
